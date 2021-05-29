@@ -38,7 +38,9 @@ export default async (req, res) => {
       Nome: data.Nome,
       Email: data.Email,
       Whatsapp: data.Whatsapp,
+      Critica: data.Critica,
       Nota: parseInt(data.Nota),
+      Indicacao: data.Indicacao,
       'Data Promo': moment().format('DD/MM/YYYY, HH:mm:ss'),
       Cupom,
       Promo

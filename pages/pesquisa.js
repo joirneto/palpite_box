@@ -7,8 +7,10 @@ const Pesquisa = () => {
     Nome: '',
     Email: '',
     Whatsapp: '',
+    Critica: ''
   })
   const notas = [0, 1, 2, 3, 4, 5]
+  const indicacao = ['Sim','Não']
   const [success, setSuccess] = useState(false)
   const [retorno, SetRetorno] = useState({})
   const save = async () => {
@@ -48,13 +50,15 @@ const Pesquisa = () => {
         O restaurante X sempre busca por atender melhor seus clientes. <br/>
 Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
-      {!success && <div className=' w-1/5 mx-auto'>
+      {!success && <div className='w-1/6 mx-auto  text-center'>
         <label className='font-bold'>Seu nome:</label>
-        <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder = 'Nome' onChange={onChange} name='Nome' value={form.Nome}/>
+        <input clase type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder = 'Nome' onChange={onChange} name='Nome' value={form.Nome}/>
         <label className='font-bold'>Email:</label>
         <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder = 'Email' onChange={onChange} name='Email'value={form.Email} />
         <label className='font-bold'>Whatsapp:</label>
         <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder = 'Whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp}/>
+        <label className='font-bold'>Elogio, Crítica e/ou Sugestão:</label>
+        <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder = 'Elogio,Crítica e/ou Sugestão' onChange={onChange} name='Critica' value={form.Critica}/>
         <label className='font-bold'>NOTA:</label>
         <div className='flex py-6'>
           {notas.map (nota => {
@@ -67,8 +71,22 @@ Por isso, estamos sempre abertos a ouvir a sua opinião.
           })
           }
         </div>
+        <label className='font-bold'>Indicaria a um(a) amigo(a):</label>
+        <div className='flex py-6 text-center'>
+          {indicacao.map (indica => {
+            return (
+              <label className=' mx-auto block w-1/6 text-center'>
+                {indica} <br/>
+                  <input type='radio' name ='Indicacao' value={indica} onChange={onChange}/>
+                </label>
+            )
+          })
+          }
+        </div>
 
-        <button className='bg-blue-400 px-12 py-4 font-bold rounded-lg shadow-lg hover:shadow my-2' onClick={save}>Salvar</button>
+        <div className='mx-auto text-center'>
+          <button className='bg-blue-400 px-12 py-4 font-bold rounded-lg shadow-lg hover:shadow my-2' onClick={save}>Salvar</button>
+          </div>
       </div>  }
       { success && <div className=' w-1/5 mx-auto'>
         <p className = 'mb-6 text-center bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3'>Obrigado por contribuir com a sua sugestão e/ou crítica.</p>
