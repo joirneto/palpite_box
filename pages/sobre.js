@@ -6,12 +6,10 @@ const Sobre = () => {
   return (
     <div>
       <Pagetitle title='Sobre'/>
-      <h1>Sobre</h1>
-      <div>
-        <Link href ='/'>
-          <a>Home</a>
-        </Link>
-      </div>
+      <h1 className='text-xl text-3xl text-center p-4' >Empresa X </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias maxime, fuga saepe distinctio tenetur voluptatum consectetur nulla optio officiis eum quo reprehenderit veritatis nesciunt rem? Aperiam ipsa reprehenderit adipisci eius?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias maxime, fuga saepe distinctio tenetur voluptatum consectetur nulla optio officiis eum quo reprehenderit veritatis nesciunt rem? Aperiam ipsa reprehenderit adipisci eius?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias maxime, fuga saepe distinctio tenetur voluptatum consectetur nulla optio officiis eum quo reprehenderit veritatis nesciunt rem? Aperiam ipsa reprehenderit adipisci eius?</p>
     </div>
   )
 }
